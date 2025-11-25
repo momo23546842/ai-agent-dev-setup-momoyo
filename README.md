@@ -12,7 +12,7 @@ Screenshot:
 
 ### ✅ Git Installed
 Screenshot:  
-<img src="images/git-version.png" width="400">
+<img src="images/GitScreenshot 2025-11-25 185107.png" width="400">
 
 ### ✅ VS Code Insider + GitHub Copilot Enabled
 Screenshot:  
