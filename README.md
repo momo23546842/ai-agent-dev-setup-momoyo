@@ -21,7 +21,10 @@ Screenshot:
 ### ✅ Claude Desktop with 4 MCP Servers Loaded (Rolldice, Bootcamp, Calendar, GitHub)
   
 Screenshot:  
-<img src="images/mcp-failed.png" width="600">
+<img src="images/RolldiceScreenshot 2025-11-25 182306.png" width="400">
+<img src="images/RolldiceScreenshot 2025-11-25 182306.png" width="400">
+<img src="images/RolldiceScreenshot 2025-11-25 182306.png" width="400">
+<img src="images/RolldiceScreenshot 2025-11-25 182306.png" width="400">
 
 ---
 
