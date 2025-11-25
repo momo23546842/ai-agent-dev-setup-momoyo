@@ -27,7 +27,7 @@ I confirmed this by successfully using the GitHub MCP tools to interact with my 
 
 ---
 
-## ✅ What I Did
+##  What I Did
 
 I asked Claude to retrieve the `README.md` file using the GitHub MCP server.  
 Here is the exact command I sent to Claude:
@@ -37,7 +37,7 @@ Claude executed the MCP tool request and retrieved the file successfully.
 
 ---
 
-## 🔧 Tool Execution Proof
+## Tool Execution Proof
 
 Claude returned the following MCP tool response:
 
@@ -53,9 +53,9 @@ This confirms:
 
 ---
 
-## 📸 Screenshot
+##  Screenshot
 
-*(Insert your screenshot showing Claude retrieving README.md and the MCP tool call log here.)*
+<img src="images/exampleScreenshot 2025-11-26 093053.png" width="400">
 
 This screenshot demonstrates:
 
@@ -65,7 +65,7 @@ This screenshot demonstrates:
 
 ---
 
-## 📌 Summary
+## Summary
 
 - The GitHub MCP server works correctly in Claude Desktop.  
 - Claude successfully fetched a file from my GitHub repository.  
