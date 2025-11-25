@@ -21,10 +21,14 @@ Screenshot:
 ### ✅ Claude Desktop with 4 MCP Servers Loaded (Rolldice, Bootcamp, Calendar, GitHub)
   
 Screenshot:  
-Rolldice<img src="images/RolldiceScreenshot 2025-11-25 182306.png" width="400">
-Bootcamp<img src="images/bootcampScreenshot 2025-11-25 182604.png" width="400">
-Calender<img src="images/calenderScreenshot 2025-11-25 182738.png" width="400">
-Github<img src="images/GithubScreenshot 2025-11-25 182809.png" width="400">
+Rolldice
+<img src="images/RolldiceScreenshot 2025-11-25 182306.png" width="400">
+Bootcamp
+<img src="images/bootcampScreenshot 2025-11-25 182604.png" width="400">
+Calender
+<img src="images/calenderScreenshot 2025-11-25 182738.png" width="400">
+Github
+<img src="images/GithubScreenshot 2025-11-25 182809.png" width="400">
 
 ---
 
