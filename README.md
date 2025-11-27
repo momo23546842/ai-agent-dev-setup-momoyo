@@ -8,7 +8,7 @@
 
 ---
 
-## 📋 Overview
+##  Overview
 
 This repository documents my complete development environment setup for the AI Agent Developer Workshop. It demonstrates a fully functional AI-enhanced development environment with MCP (Model Context Protocol) server integration, enabling Claude Desktop to interact with external tools and services.
 
@@ -179,7 +179,7 @@ Everything was correct, and the server status remained **Running**, meaning Clau
 
 The actual issue was much simpler:
 
-❌ Claude was trying to access the wrong repository name.  
+ Claude was trying to access the wrong repository name.  
 The repository name in my command did not exactly match the actual GitHub repo.
 
 GitHub MCP cannot access a repository that doesn’t exist → so it returned no results.
@@ -189,11 +189,11 @@ GitHub MCP cannot access a repository that doesn’t exist → so it returned no
 ### Fix Implemented
 
 I renamed the repository to a clean and correct format:
-<img src="testGithubandClaudeScreenshot 2025-11-27 151348.png" width="600" alt="GitHub MCP" >
+<img src="images/testGithubandClaudeScreenshot 2025-11-27 151348.png" width="600" alt="GitHub MCP" >
 
 
 
-## 🎯 Key Insights
+##  Key Insights
 
 ### AI Agent Developer Mindset Shift
 The setup process revealed a fundamental shift from traditional development to AI-augmented workflows:
@@ -203,6 +203,19 @@ The setup process revealed a fundamental shift from traditional development to A
 2. **Declarative Configuration:** The `claude-desktop-config.json` approach shows how modern AI development emphasizes declarative tool definitions over imperative programming.
 
 3. **Multi-Tool Orchestration:** Having 4 different MCP servers highlights how AI agents can coordinate multiple specialized tools to accomplish complex tasks.
+
+---
+
+##  Conclusion
+
+This repository demonstrates a fully functional AI Agent Developer environment with all required tools installed, configured, and verified. Through the setup of MCP servers—especially the successful connection of the GitHub MCP server—I gained hands-on experience with AI-enhanced development workflows and learned how AI can interact with external systems in practical ways.
+
+The troubleshooting process, particularly identifying the repository name issue, strengthened my understanding of how MCP servers communicate with external tools and how important precise configuration is when working with AI-driven development environments.
+
+By completing this setup and documenting every step, I have built a solid foundation for the upcoming weeks of the program. I am now fully prepared to continue developing AI-driven workflows, experiment with agentic behaviors, and deepen my ability to collaborate with AI as an active development partner.
+
+
+
 
 
 
