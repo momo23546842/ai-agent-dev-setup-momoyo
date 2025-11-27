@@ -79,28 +79,6 @@ Rolldice / Bootcamp / Calendar servers are configured and showing warning icons 
 **Verification:** Confirmed that the GitHub MCP server is running and can successfully interact with my repository `ai-agent-dev-setup-momoyo` from Claude Desktop.
 
 
----
-
-## 📁 Repository Structure
-
-```
-ai-agent-dev-setup-momoyo/
-├── README.md                          # This file
-├── reflection.md                      # 500-word personal reflection
-├── VERIFICATION.md                    # Proof of MCP server functionality
-├── mcp-configs/
-│   ├── claude-desktop-config.json    # Claude Desktop MCP configuration
-│   ├── mcp-servers-list.md           # Detailed server documentation
-│   └── connection-test.md            # Server connection test results
-└── images/
-    ├── node.png
-    ├── GitScreenshot 2025-11-25 185107.png
-    ├── Github-copiloteScreenshot 2025-11-25 190553.png
-    ├── RolldiceScreenshot 2025-11-25 182306.png
-    ├── bootcampScreenshot 2025-11-25 182604.png
-    ├── calenderScreenshot 2025-11-25 182738.png
-    └── GithubScreenshot 2025-11-25 182809.png
-```
 
 ---
 
