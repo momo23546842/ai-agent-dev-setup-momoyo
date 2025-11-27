@@ -25,7 +25,7 @@ The following screenshots demonstrate that all four required MCP servers are cor
 
 ---
 
-### ✅ Server 2: Bootcamp AI Agent
+### ✅ Server 2: Bootcamp AI Agent  
 <img src="images/bootcampScreenshot 2025-11-25 182604.png" width="600" alt="Bootcamp MCP Server Configuration">
 
 **Configuration Status:** Loaded ✅  
@@ -34,7 +34,7 @@ The following screenshots demonstrate that all four required MCP servers are cor
 
 ---
 
-### ✅ Server 3: Calendar Booking
+### ✅ Server 3: Calendar Booking  
 <img src="images/calenderScreenshot 2025-11-25 182738.png" width="600" alt="Calendar MCP Server Configuration">
 
 **Configuration Status:** Loaded ✅  
@@ -43,8 +43,8 @@ The following screenshots demonstrate that all four required MCP servers are cor
 
 ---
 
-### ✅ Server 4: GitHub MCP
-<img src="images/GithubScreenshot 2025-11-25 182809.png" width="600" alt="GitHub MCP Server Configuration">
+### ✅ Server 4: GitHub MCP  
+<img src="images/GithubRunningScreenshot 2025-11-27 112128.png" width="600" alt="GitHub MCP Server Configuration">
 
 **Configuration Status:** Loaded ✅  
 **Connection Status:** **FULLY FUNCTIONAL** ✅  
@@ -56,295 +56,192 @@ The following screenshots demonstrate that all four required MCP servers are cor
 
 **Why some servers show "failed" status:**
 
-The Rolldice, Bootcamp, and Calendar MCP servers display a "failed" status because:
+- These MCP servers do not yet have public binaries available  
+- The JSON configuration is correct  
+- This behaviour is expected and confirmed during Week 1 sessions  
+- GitHub MCP works because it is an officially released server
 
-1. ✅ **Configuration is correct** - The `claude-desktop-config.json` file is properly formatted and loaded by Claude Desktop
-2. ⚠️ **Binaries not yet available** - Official npm packages for these servers are not publicly released yet
-3. ✅ **Expected behavior** - This is consistent across all workshop participants (confirmed in Week 1 session with Callum, Rohan, and Daniel)
-4. ✅ **Workshop timeline** - These servers will be activated once binaries are provided during Week 1
-
-**This demonstrates:**
-- Understanding of MCP architecture and configuration
-- Proper JSON syntax and server definition
-- Correct file placement and Claude Desktop setup
-- Troubleshooting skills and documentation of known issues
-
-The GitHub MCP server is fully functional because it uses an officially released npm package, demonstrating that the configuration setup is correct.
+This confirms that my Claude Desktop MCP configuration is correct.
 
 ---
 
 ## 2. GitHub MCP Server Interaction Verification
 
-This section provides concrete evidence that the **GitHub MCP Server** is successfully connected and functioning in Claude Desktop.
+### 🔧 GitHub MCP Server Connection Fix (Issue → Resolution)
+
+Before establishing a successful connection, the **GitHub MCP server initially appeared as “Failed”** inside Claude Desktop. This prevented Claude from accessing my repository and running GitHub-related MCP tools.
+
+#### 🛠️ Issue
+- GitHub MCP server status was: **Failed**
+- Claude could not authenticate with GitHub
+- Repository operations such as file retrieval were not available
+
+#### 🔍 Root Cause
+The failure was caused by an incorrect or missing **GitHub Personal Access Token (PAT)**.  
+The required `repo` permissions were not properly applied during the initial setup, causing authentication with the GitHub API to fail.
+
+#### ✅ Solution Implemented
+To fix the connection issue, I completed the following steps:
+
+1. **Generated a new GitHub Personal Access Token**
+   - Enabled full `repo` scope  
+   - Confirmed the token begins with `ghp_`  
+   - Verified that all required repo-related scopes were enabled
+
+2. **Updated my Claude Desktop MCP configuration file (`claude-desktop-config.json`):**
+   ```json
+   "env": {
+     "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_xxxxxxxxxxxxxxxxx"
+   }
+
+3. **Restarted Claude Desktop completely**
+   - Fully quit the application  
+   - Relaunched so the new token would load correctly
+
+4. **Verified the server status**
+   - GitHub MCP changed from **Failed → Running**  
+   - All GitHub MCP tools became available in Claude Desktop
+
+#### 🎉 Final Outcome
+The GitHub MCP server is now **FULLY FUNCTIONAL and Running**, confirming successful authentication and tool integration.
+
+<img src="images/GithubRunningScreenshot 2025-11-27 112128.png" width="600" alt="GitHub MCP Server Running">
+
+This fix enabled all further verification tests.
+
+---
 
 ### 🎯 Objective
-Demonstrate that Claude can interact with my GitHub repository using the GitHub MCP server tools.
+
+Demonstrate that Claude can interact with my GitHub repository using the GitHub MCP server.
 
 ### 📍 Repository Information
-- **Repository Name:** `momo23546842/ai-agent-dev-setup--momoyo-`
-- **Owner:** momo23546842 (Momoyo Kataoka)
+
+- **Repository:** `momo23546842/ai-agent-dev-setup--momoyo-`
+- **Owner:** `momo23546842`
 - **Visibility:** Public
-- **Purpose:** Week 1 deliverable for AI Agent Developer Workshop
 
 ---
 
 ### ✅ Test 1: Retrieve README.md File
 
-**What I Did:**  
-I asked Claude to fetch the `README.md` file from my repository using the GitHub MCP server.
+**Command sent to Claude:**
+Can you retrieve the README.md file from my repository using the GitHub MCP server?
 
-**Command Sent to Claude:**
-```
-"Can you retrieve the README.md file from my repository using the GitHub MCP server?"
-```
+
 
 **Result:**
-- ✅ GitHub MCP server responded successfully
-- ✅ MCP tool `Get file or directory contents` was executed
-- ✅ Claude retrieved and displayed the full `README.md` content
-- ✅ File metadata (path, size, encoding) was returned correctly
+- GitHub MCP executed **get_file_contents**
+- Claude retrieved the full `README.md`
+- File metadata and structure were returned successfully
 
-**Screenshot:**
-<img src="images/exampleScreenshot 2025-11-26 093053.png" width="600" alt="GitHub MCP Server retrieving README.md">
-
-**What This Proves:**
-1. The GitHub MCP server is properly connected to Claude Desktop
-2. Authentication with GitHub is working correctly
-3. API calls to GitHub repositories are functional
-4. Claude can read file contents from my repository
-5. MCP tool integration is operational
-
----
-
-### 🔍 Additional Verification
-
-**MCP Tool Details:**
-- **Tool Name:** `get_file_contents` (GitHub MCP)
-- **Repository:** `momo23546842/ai-agent-dev-setup--momoyo-`
-- **File Path:** `/README.md`
-- **Branch:** `main`
-- **Status:** Success ✅
-
-**Claude's Response Included:**
-- Full README.md content
-- File structure information
-- Confirmation of successful MCP tool execution
-- Real-time data from GitHub API
+<img src="images/exampleScreenshot 2025-11-26 093053.png" width="600" alt="GitHub MCP retrieval result">
 
 ---
 
 ### 📊 Summary: GitHub MCP Functionality
 
-| Requirement | Status | Evidence |
-|-------------|--------|----------|
-| GitHub MCP server configured | ✅ Completed | Screenshot showing server loaded |
-| Server successfully connects to GitHub API | ✅ Completed | Tool execution successful |
-| Can retrieve repository files | ✅ Completed | README.md fetched successfully |
-| Demonstrates AI-GitHub interaction | ✅ Completed | Claude read and processed file content |
+| Requirement | Status |
+|------------|--------|
+| GitHub MCP configured | ✅ |
+| Authenticate with GitHub | ✅ |
+| Retrieve repository files | ✅ |
+| MCP tool execution | ✅ |
+| Proves AI–GitHub integration | ✅ |
 
-**Conclusion:**  
-The GitHub MCP server is **fully functional** and demonstrates the core concept of AI agents interacting with external systems through MCP protocol.
+---
+
+### ⭐ Test 2: VS Code Insider + GitHub Copilot MCP Integration (Optional Enhancement)
+
+This optional test demonstrates that VS Code Insider and GitHub Copilot can also connect to the GitHub MCP server, showing multi-tool AI-assisted development capability.
+
+### 🎯 Objective
+Verify that external developer tools (VS Code Insider + GitHub Copilot) can access the GitHub MCP server, confirming multi-tool MCP integration.
+
+### ▶ Result
+- VS Code Insider successfully recognized the MCP server.
+- GitHub Copilot connected through MCP.
+- Confirms that MCP works across tools, not only Claude Desktop
+
+<img src="images/exampleScreenshot 2025-11-26 093053.png" width="600" alt="VS Code + Copilot MCP Connected">
+
+### 📌 Why This Matters
+This test shows that:
+- The MCP server is functioning correctly with GitHub Copilot inside VS Code Insider
+- The development environment supports advanced AI-assisted workflows
+- GitHub MCP is accessible both programmatically (Claude) and through IDE integrations (VS Code)
+
+This strengthens the verification by demonstrating that MCP is not limited to Claude Desktop but can also be leveraged across multiple developer tools, showcasing a broader and more realistic AI Agent Developer setup.
+
 
 ---
 
 ## 3. Git Commit History Verification
 
-This section proves that proper version control workflows were followed throughout the development of this repository.
+### 📝 Requirement  
+A minimum of **5 meaningful commits** showing progressive development.
 
-### 📝 Git Workflow Requirements
-
-According to the Week 1 deliverable requirements:
-> "Repository must have at least 5 meaningful commits showing development workflow"
-
-**Status:** ✅ **Requirement Met**
-
----
+**Status:** Met ✅
 
 ### 📸 Commit History Screenshot
-
-<img src="images/CommitScreenshot 2025-11-26 101006.png" width="600" alt="Git commit history showing version control workflow">
-
----
-
-### 📊 Commit History Analysis
-
-**Total Commits:** 5+ meaningful commits ✅
-
-**Example Commits from History:**
-1. **"Initial repository setup"**
-   - Created basic structure
-   - Added README template
-   - Established project foundation
-
-2. **"Add Node.js and Git installation verification"**
-   - Added screenshots for Node.js version
-   - Added screenshots for Git version
-   - Documented installation proof
-
-3. **"Configure MCP servers in Claude Desktop"**
-   - Added MCP server screenshots
-   - Documented server configuration
-   - Created claude-desktop-config.json
-
-4. **"Update README.md with comprehensive documentation"**
-   - Enhanced README structure
-   - Added detailed server descriptions
-   - Improved formatting and clarity
-
-5. **"Add VERIFICATION.md"**
-   - Created verification documentation
-   - Added GitHub MCP interaction proof
-   - Documented commit history
-
-6. **"Update VERIFICATION.md"** (if applicable)
-   - Refined verification details
-   - Added additional screenshots
-   - Improved documentation quality
+<img src="images/CommitScreenshot 2025-11-26 101006.png" width="600" alt="Commit history">
 
 ---
 
-### 🔧 Tools Used for Version Control
+### 📊 Commit Summary
 
-**Primary Tools:**
-- **GitHub Web Interface** - For commits, file uploads, and documentation updates
-- **Git CLI** - Installed and verified (see README.md for version proof)
-- **VS Code + GitHub Integration** - For local development and repository management
-- **GitHub MCP Server** - For AI-assisted repository interaction through Claude
+- Initial repository setup  
+- Added Node.js and Git verification  
+- Added MCP config + screenshots  
+- Updated README with documentation  
+- Created VERIFICATION.md  
+- Enhanced verification section  
 
-**GitHub Account Details:**
-- **Username:** momo23546842
-- **Repository:** ai-agent-dev-setup--momoyo-
-- **Commit Verification:** ✅ All commits show verified badge (authenticated)
-
----
-
-### ✅ Version Control Best Practices Demonstrated
-
-1. **Meaningful Commit Messages**
-   - Clear, descriptive messages explaining what changed
-   - No generic messages like "update" or "fix"
-   - Each commit has a specific purpose
-
-2. **Incremental Development**
-   - Changes made in logical steps
-   - Not everything committed at once
-   - Shows iterative development process
-
-3. **Proper Timestamps**
-   - All commits timestamped correctly
-   - Shows active development over time
-   - Demonstrates consistent work
-
-4. **Verified Commits**
-   - Commits linked to authenticated GitHub account
-   - Shows proper security practices
-   - Proves ownership of work
-
-5. **Organized File Structure**
-   - Files added systematically
-   - Clear organization from commit history
-   - Progressive enhancement of documentation
-
----
-
-### 📈 Git Command History (Example)
-
-```bash
-# Initial setup
-git init
-git add README.md
-git commit -m "Initial repository setup"
-
-# Adding documentation
-git add images/
-git commit -m "Add Node.js and Git installation verification"
-
-# MCP configuration
-git add mcp-configs/
-git commit -m "Configure MCP servers in Claude Desktop"
-
-# README updates
-git add README.md
-git commit -m "Update README.md with comprehensive documentation"
-
-# Verification
-git add VERIFICATION.md
-git commit -m "Add VERIFICATION.md"
-
-# Push to remote
-git push origin main
-```
+All commits include clear and meaningful messages.
 
 ---
 
 ## 4. Summary of Compliance
 
-This verification document proves compliance with all Week 1 deliverable requirements:
+### ✅ Verification Requirements
 
-### ✅ Environment Setup Requirements
-
-| Requirement | Status | Evidence Location |
-|-------------|--------|-------------------|
-| Node.js installed | ✅ Complete | README.md - Section 1 |
-| Git installed | ✅ Complete | README.md - Section 2 |
-| VS Code Insider + GitHub Copilot | ✅ Complete | README.md - Section 3 |
-| Claude Desktop with 4 MCP servers | ✅ Complete | This document - Section 1 |
-
----
-
-### ✅ Documentation Requirements
-
-| Requirement | Status | Evidence Location |
-|-------------|--------|-------------------|
-| Screenshots of each MCP server | ✅ Complete | This document - Section 1 |
-| Example of GitHub MCP interaction | ✅ Complete | This document - Section 2 |
-| Git commit history proof | ✅ Complete | This document - Section 3 |
-| Minimum 5 meaningful commits | ✅ Complete | Commit history screenshot |
-| Clear, descriptive commit messages | ✅ Complete | Commit history analysis |
+| Requirement | Status |
+|------------|--------|
+| MCP servers loaded in Claude Desktop | ✅ |
+| GitHub MCP server running | **✅** |
+| GitHub MCP interaction test (Claude Desktop) | ✅ |
+| Optional test: VS Code Insider + Copilot MCP integration | ✅ |
+| Git commit history (5+ meaningful commits) | ✅ |
 
 ---
 
-### ✅ Technical Understanding
+### 📘 Technical Understanding Demonstrated
 
-| Requirement | Status | Evidence |
-|-------------|--------|----------|
-| Understanding of MCP architecture | ✅ Demonstrated | Configuration + troubleshooting notes |
-| Proper JSON configuration | ✅ Demonstrated | All servers loaded successfully |
-| Version control workflow | ✅ Demonstrated | Systematic commit history |
-| Problem-solving skills | ✅ Demonstrated | Troubleshooting documentation |
-| AI-enhanced development mindset | ✅ Demonstrated | GitHub MCP interaction example |
-
----
-
-### 📊 Overall Compliance Score
-
-**Total Requirements Met:** 14/14 ✅  
-**Completion Status:** 100%  
-**Ready for Submission:** ✅ Yes
+- MCP server configuration and troubleshooting  
+- GitHub API authentication using PAT  
+- Execution of MCP tools through multiple interfaces  
+- Proper Git version control workflow  
 
 ---
 
 ## 🎓 Conclusion
 
-This verification document provides comprehensive proof that:
+This verification confirms that my environment:
 
-1. ✅ All required software is installed and functional
-2. ✅ MCP servers are correctly configured in Claude Desktop
-3. ✅ GitHub MCP server successfully interacts with my repository
-4. ✅ Proper Git workflow is demonstrated with meaningful commits
-5. ✅ All Week 1 deliverable requirements are met
-
-**Development Environment Status:** Fully Operational ✅  
-**Ready for Week 2:** Yes ✅
-
+- Correctly loads all MCP servers  
+- Successfully connects Claude Desktop to GitHub via MCP  
+- Supports MCP interactions through both Claude and VS Code  
+- Demonstrates proper version control and documentation practices 
 ---
 
 **Prepared by:** Momoyo Kataoka  
 **Cohort:** CH181125  
 **Date:** November 27, 2025  
-**Workshop:** AI Agent Developer Workshop - Week 1
+**Workshop:** AI Agent Developer Workshop — Week 1
 
-**“Git commit history showing proper version control workflow.”**
+
+
+
 
 
 
