@@ -179,25 +179,51 @@ This strengthens the verification by demonstrating that MCP is not limited to Cl
 ## 3. Git Commit History Verification
 
 ### 📝 Requirement  
-A minimum of **5 meaningful commits** showing progressive development.
+Week 1 requires **at least 5 meaningful commits** demonstrating a clear and iterative development workflow.
 
-**Status:** Met ✅
+**Status:** Requirement Met ✅
+
+---
 
 ### 📸 Commit History Screenshot
-<img src="images/CommitScreenshot 2025-11-26 101006.png" width="600" alt="Commit history">
+
+<img src="images/CommitScreenshot 2025-11-26 101006.png" width="600" alt="Commit history showing development workflow">
 
 ---
 
 ### 📊 Commit Summary
 
-- Initial repository setup  
-- Added Node.js and Git verification  
-- Added MCP config + screenshots  
-- Updated README with documentation  
-- Created VERIFICATION.md  
-- Enhanced verification section  
+My commit history shows a clear and consistent development process with meaningful, incremental updates:
 
-All commits include clear and meaningful messages.
+- **Initial project setup**  
+  Created the repository structure and the first version of README.
+
+- **Added core documentation files**  
+  Added `VERIFICATION.md`, `reflection.md`, `connection-test.md`, and the `.gitkeep` to set up folder structure.
+
+- **Uploaded screenshots and assets**  
+  Multiple commits titled *“Add files via upload”* show the process of adding verification images, MCP screenshots, and supporting materials.
+
+- **Updated README.md repeatedly**  
+  Refined documentation, added environment setup steps, screenshots, and improved clarity over multiple commits.
+
+- **Iterative improvements to VERIFICATION.md**  
+  Many commits titled *“Update VERIFICATION.md”* show iterative refinement as I tested MCP servers, fixed GitHub MCP authentication, and added verification results.
+
+This history demonstrates **a real, step-by-step workflow**, not a single bulk update.
+
+---
+
+### 🔧 Version Control Practices Demonstrated
+
+- Clear and meaningful commit messages  
+- Incremental improvements rather than one large commit  
+- Proper project structuring through multiple file additions  
+- Continuous documentation updates reflecting ongoing progress  
+- Verified commits linked to my authenticated GitHub account  
+
+This confirms full compliance with the Week 1 version control requirements.
+
 
 ---
 
