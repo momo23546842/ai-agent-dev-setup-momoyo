@@ -84,7 +84,7 @@ Rolldice / Bootcamp / Calendar servers are configured and showing warning icons 
 ## 📁 Repository Structure
 
 ```
-ai-agent-dev-setup--momoyo/
+ai-agent-dev-setup-momoyo/
 ├── README.md                          # This file
 ├── reflection.md                      # 500-word personal reflection
 ├── VERIFICATION.md                    # Proof of MCP server functionality
@@ -132,18 +132,65 @@ ai-agent-dev-setup--momoyo/
 
 ---
 
-## 🐛 Troubleshooting Notes
+##  Troubleshooting Notes
 
-### Issue 1: MCP Server Binaries Not Found
-**Problem:** All four MCP servers show "failed" status in Claude Desktop despite correct configuration.
+### Issue: GitHub MCP Server Was Running but Not Responding to Commands
 
-**Root Cause:** Official npm packages for `rolldice`, `bootcamp`, `calendar`, and `github` MCP servers are not yet publicly available.
+**Problem:**  
+Although the GitHub MCP server showed **“Running”** in Claude Desktop, it did not respond to commands.  
+For example, when I asked Claude to:
 
-**Current Status:** Configuration file is correctly loaded; servers will activate once binaries are provided during Week 1.
+- list the files in the repository  
+- retrieve README.md  
+- access the root directory  
 
-**Verification:** Confirmed this behavior is consistent across all workshop participants and is expected for initial setup.
+Claude returned errors such as:
+
+- “No result received from client-side tool execution”
+- “Repository not found”
+- “Unable to access repository”
+
+At first, it seemed like the MCP server itself was failing.
 
 ---
+
+### Investigation Step 1: Suspected Token Permission Issue (But It Was Correct)
+
+My first hypothesis was that the GitHub Personal Access Token (PAT) might not have enough permissions.  
+I checked my token settings and confirmed:
+
+✔ `repo` permission was fully enabled  
+✔ public and private repo access allowed  
+✔ the token was correctly placed in `claude-desktop-config.json`  
+✔ Claude Desktop was fully restarted to load the updated token  
+
+**Result:**  
+The PAT was correctly configured — token permissions were *not* the cause.
+
+---
+
+### Investigation Step 2: MCP Server Configuration  
+I also checked the MCP server configuration inside `claude-desktop-config.json`.  
+Everything was correct, and the server status remained **Running**, meaning Claude successfully authenticated with GitHub.
+
+---
+
+### Final Root Cause: Incorrect Repository Name
+
+The actual issue was much simpler:
+
+❌ Claude was trying to access the wrong repository name.  
+The repository name in my command did not exactly match the actual GitHub repo.
+
+GitHub MCP cannot access a repository that doesn’t exist → so it returned no results.
+
+---
+
+### Fix Implemented
+
+I renamed the repository to a clean and correct format:
+<img src="testGithubandClaudeScreenshot 2025-11-27 151348.png" width="600" alt="GitHub MCP" >
+
 
 
 ## 🎯 Key Insights
