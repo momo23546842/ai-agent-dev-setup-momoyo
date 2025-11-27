@@ -72,7 +72,7 @@ Rolldice / Bootcamp / Calendar servers are configured and showing warning icons 
 ---
 
 #### **Server 4: GitHub MCP**
-<img src="images/GithubScreenshot 2025-11-25 182809.png" width="600" alt="GitHub MCP server">
+<img src="images/GithubRunningScreenshot 2025-11-27 112128.png" width="600" alt="GitHub MCP server">
 
 **Purpose:** Enables AI to interact directly with GitHub repositories - creating issues, managing pull requests, and automating repository workflows.
 
@@ -84,7 +84,7 @@ Rolldice / Bootcamp / Calendar servers are configured and showing warning icons 
 ## 📁 Repository Structure
 
 ```
-ai-agent-dev-setup-[your-name]/
+ai-agent-dev-setup--momoyo/
 ├── README.md                          # This file
 ├── reflection.md                      # 500-word personal reflection
 ├── VERIFICATION.md                    # Proof of MCP server functionality
