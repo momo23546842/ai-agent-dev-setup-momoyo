@@ -17,4 +17,21 @@ Below is the screenshot showing all four servers appearing in Claude Desktop:
 The following test confirms that the GitHub MCP server is fully functional:
 
 ### Command:
+Can you list the files in my repository using the GitHub MCP server?
+
+
+### Result:
+- Claude successfully retrieved the repository contents  
+- MCP executed `get_file_contents` correctly  
+- Response screenshot:
+
+<img src="../images/testGithubandClaudeScreenshot 2025-11-27 151348.png" width="600" alt="Claude successfully retrieving repository contents via GitHub MCP">
+
+---
+
+## 3. Summary
+- Rolldice MCP → Loaded (binary pending)  
+- Bootcamp MCP → Loaded (binary pending)  
+- Calendar MCP → Loaded (binary pending)  
+- **GitHub MCP → Fully Running and Verified**  
 
