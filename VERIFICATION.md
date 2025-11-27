@@ -126,7 +126,7 @@ Demonstrate that Claude can interact with my GitHub repository using the GitHub 
 ### ✅ Test 1: Retrieve README.md File
 
 **Command sent to Claude:**
-Can you retrieve the README.md file from my repository using the GitHub MCP server?
+Can you use the GitHub MCP server to list the files in my repository: ai-agent-dev-setup-momoyo?
 
 
 
@@ -135,7 +135,7 @@ Can you retrieve the README.md file from my repository using the GitHub MCP serv
 - Claude retrieved the full `README.md`
 - File metadata and structure were returned successfully
 
-<img src="images/exampleScreenshot 2025-11-26 093053.png" width="600" alt="GitHub MCP retrieval result">
+<img src="images/testGithubandClaudeScreenshot 2025-11-27 151348.png" width="600" alt="GitHub MCP retrieval result">
 
 ---
 
